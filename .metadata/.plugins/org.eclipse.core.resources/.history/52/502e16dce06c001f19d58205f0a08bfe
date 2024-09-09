@@ -1,0 +1,10 @@
+package models;
+
+public class User {
+	private String hoVaTen;
+	private String email;
+	private String tenDangNhap;
+	private String matKhau;
+	
+	
+}
