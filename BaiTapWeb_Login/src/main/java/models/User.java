@@ -45,6 +45,13 @@ public class User {
 	public void setMatKhau(String matKhau) {
 		this.matKhau = matKhau;
 	}
+	
+	public User(String tenDangNhap, String hoVaTen, String email) {
+		super();
+		this.hoVaTen = hoVaTen;
+		this.email = email;
+		this.tenDangNhap = tenDangNhap;
+	}
 
 
 	public User(String tenDangNhap, String matKhau, String hoVaTen, String email) {

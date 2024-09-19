@@ -27,8 +27,9 @@ nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
+
 body{
-background: url(../images/banner2.jpg)no-repeat;
+background: url(../images/header-bg.jpg);
 background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -72,7 +73,7 @@ a:hover{
     margin: 0 auto;
 }
 .header-main h1 {
-    font-size: 32px;
+    font-size: 64px;
     color: #FFFFFF;
     text-align: center;
     padding-bottom: 0.8em;
@@ -96,7 +97,7 @@ span.hed-white {
     color: #fff;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
-    background:#007700;
+    background:#ff3366;
     width: 40px;
     height: 40px;
     line-height: 1.7em;
@@ -145,7 +146,7 @@ span.login-color {
   display: inline-block;
 }
 .header-left-bottom input[type="submit"] {
-    background: #808080;
+    background: #ff3366;
     color: #FFF;
     font-size: 26px;
     padding: 0.3em 1.2em;
@@ -163,7 +164,7 @@ span.login-color {
     font-family: 'Roboto Condensed', sans-serif;
 }
 .header-left-bottom input[type="submit"]:hover {
-    background: #444444;
+    background: #b5183f;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;

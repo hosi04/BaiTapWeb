@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/main/webapp/result/thanhcong.jsp=UTF-8
-encoding//src/main/webapp/result/thatbai.jsp=UTF-8
+encoding//src/main/webapp/client/changeInfo.jsp=UTF-8
+encoding//src/main/webapp/notify/registerSuccess.jsp=UTF-8
+encoding//src/main/webapp/views/header.jsp=UTF-8
+encoding//src/main/webapp/views/index.jsp=UTF-8

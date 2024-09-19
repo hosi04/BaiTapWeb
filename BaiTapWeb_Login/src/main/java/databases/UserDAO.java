@@ -13,6 +13,45 @@ public class UserDAO implements DAOInterface<User> {
 	public ArrayList<User> data = new ArrayList<>();
 	
 	
+	public User forgotPassword(User t) {
+		User ketQua = null;
+		try {
+			// Bước 1: tạo kết nối đến CSDL
+			Connection con = JDBCUtil.getConnection();
+
+			// Bước 2: tạo ra đối tượng statement
+			String sql = "SELECT * FROM user WHERE email=? and tendangnhap=?";
+			PreparedStatement st = con.prepareStatement(sql);
+			System.out.println(t.getEmail()+"/"+t.getTenDangNhap());
+			st.setString(1, t.getEmail());
+			st.setString(2, t.getTenDangNhap());
+			
+
+			// Bước 3: thực thi câu lệnh SQL
+			System.out.println(sql);
+			ResultSet rs = st.executeQuery();
+
+			// Bước 4:
+			while (rs.next()) {
+				String tenDangNhap = rs.getString("tendangnhap");
+				String matKhau = rs.getString("matkhau");
+				String hoVaTen = rs.getString("hoVaTen");
+				String emmail = rs.getString("email");
+
+				ketQua = new User(tenDangNhap, matKhau, hoVaTen, emmail);
+				
+			}
+
+			// Bước 5:
+			JDBCUtil.closeConnection(con);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ketQua;
+	}
+	
 	public User checkLogin(User t) {
 		User ketQua = null;
 		try {
@@ -119,7 +158,66 @@ public class UserDAO implements DAOInterface<User> {
 
 	@Override
 	public int update(User t) {
-		// TODO Auto-generated method stub
-		return 0;
+		int ketQua = 0;
+		try {
+			// Bước 1: tạo kết nối đến CSDL
+			Connection con = JDBCUtil.getConnection();
+
+			// Bước 2: tạo ra đối tượng statement
+			String sql = "UPDATE user " + " SET " + " matkhau=?" +  " WHERE tendangnhap=?";
+
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, t.getMatKhau());
+			st.setString(2, t.getTenDangNhap());
+			// Bước 3: thực thi câu lệnh SQL
+
+			System.out.println(sql);
+			ketQua = st.executeUpdate();
+
+			// Bước 4:
+			System.out.println("Bạn đã thực thi: " + sql);
+			System.out.println("Có " + ketQua + " dòng bị thay đổi!");
+
+			// Bước 5:
+			JDBCUtil.closeConnection(con);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ketQua;
+	}
+	
+	public int changeInfo(User t) {
+		int ketQua = 0;
+		try {
+			// Bước 1: tạo kết nối đến CSDL
+			Connection con = JDBCUtil.getConnection();
+
+			// Bước 2: tạo ra đối tượng statement
+			String sql = "UPDATE user " + " SET " + " hovaten=?" + ", email=?" + " WHERE tendangnhap=?";
+			
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, t.getHoVaTen());
+			st.setString(2, t.getEmail());
+			st.setString(3, t.getTenDangNhap());
+
+			// Bước 3: thực thi câu lệnh SQL
+
+			System.out.println(sql);
+			ketQua = st.executeUpdate();
+
+			// Bước 4:
+			System.out.println("Bạn đã thực thi: " + sql);
+			System.out.println("Có " + ketQua + " dòng bị thay đổi!");
+
+			// Bước 5:
+			JDBCUtil.closeConnection(con);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ketQua;
 	}
 }
