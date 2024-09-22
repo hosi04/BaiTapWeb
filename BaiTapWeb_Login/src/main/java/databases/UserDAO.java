@@ -76,8 +76,10 @@ public class UserDAO implements DAOInterface<User> {
 				String matKhau = rs.getString("matkhau");
 				String hoVaTen = rs.getString("hoVaTen");
 				String emmail = rs.getString("email");
+				String phone = rs.getString("phone");
+				String images = "";
 
-				ketQua = new User(tenDangNhap, matKhau, hoVaTen, emmail);
+				ketQua = new User(hoVaTen, emmail, tenDangNhap, matKhau, images, phone);
 				
 			}
 
@@ -99,14 +101,16 @@ public class UserDAO implements DAOInterface<User> {
 			Connection con = JDBCUtil.getConnection();
 
 			// Bước 2: tạo ra đối tượng statement
-			String sql = "INSERT INTO user (tenDangNhap, matKhau, hoVaTen, email) "
-					+ " VALUES (?,?,?,?)";
+			String sql = "INSERT INTO user (tenDangNhap, matKhau, hoVaTen, email, images, phone) "
+					+ " VALUES (?,?,?,?,?,?)";
 
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, t.getTenDangNhap());
 			st.setString(2, t.getMatKhau());
 			st.setString(3, t.getHoVaTen());
 			st.setString(4, t.getEmail());
+			st.setString(5, t.getImages());
+			st.setString(6, t.getPhone());
 
 
 			// Bước 3: thực thi câu lệnh SQL
@@ -195,13 +199,20 @@ public class UserDAO implements DAOInterface<User> {
 			Connection con = JDBCUtil.getConnection();
 
 			// Bước 2: tạo ra đối tượng statement
-			String sql = "UPDATE user " + " SET " + " hovaten=?" + ", email=?" + " WHERE tendangnhap=?";
+			String sql = "UPDATE user " +
+		             "SET hovaten = ?, email = ?, images = ?, phone = ? " +
+		             "WHERE tendangnhap = ?";
+
 			
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, t.getHoVaTen());
 			st.setString(2, t.getEmail());
-			st.setString(3, t.getTenDangNhap());
-
+			st.setString(3, t.getImages());
+			st.setString(4, t.getPhone());
+			st.setString(5, t.getTenDangNhap());
+			
+			
+			
 			// Bước 3: thực thi câu lệnh SQL
 
 			System.out.println(sql);

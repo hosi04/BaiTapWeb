@@ -1,8 +1,0 @@
-package databases;
-
-import models.User;
-
-public class UserDAO implements DAOInterface<User> {
-	
-
-}

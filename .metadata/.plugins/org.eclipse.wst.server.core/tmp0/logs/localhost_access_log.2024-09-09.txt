@@ -1,4 +1,0 @@
-127.0.0.1 - - [09/Sep/2024:10:01:10 +0700] "GET / HTTP/1.1" 404 752
-0:0:0:0:0:0:0:1 - - [09/Sep/2024:10:01:11 +0700] "GET /HelloWorld/views/index.html HTTP/1.1" 304 -
-0:0:0:0:0:0:0:1 - - [09/Sep/2024:10:01:12 +0700] "GET /HelloWorld/trangchu?ten=&holot= HTTP/1.1" 500 3424
-0:0:0:0:0:0:0:1 - - [09/Sep/2024:10:01:17 +0700] "GET /HelloWorld/trangchu?ten=abc&holot=accc HTTP/1.1" 404 683

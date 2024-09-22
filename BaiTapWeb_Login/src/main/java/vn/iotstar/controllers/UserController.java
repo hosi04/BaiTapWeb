@@ -1,16 +1,20 @@
 package vn.iotstar.controllers;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.file.Paths;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import databases.UserDAO;
 import models.User;
@@ -20,6 +24,7 @@ import models.User;
  */
 
 @WebServlet(urlPatterns = {"/Client"})
+@MultipartConfig
 public class UserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -137,18 +142,20 @@ public class UserController extends HttpServlet {
 			
 			String hoVaTen = request.getParameter("hoVaTen");
 			String email = request.getParameter("email");
+			String phone = request.getParameter("phone");
 			String tenDangNhap = request.getParameter("tenDangNhap");
 			String matKhau = request.getParameter("matKhau");
 			String nhapLaiMatKhau = request.getParameter("nhapLaiMatKhau");
 			
 			request.setAttribute("hoVaTen", hoVaTen);
 			request.setAttribute("email", email);
+			request.setAttribute("phone", phone);
 			request.setAttribute("tenDangNhap", tenDangNhap);
 			request.setAttribute("matKhau", matKhau);
 			request.setAttribute("nhapLaiMatKhau", nhapLaiMatKhau);
 			
 			UserDAO userDao = new UserDAO();
-			User user = new User(tenDangNhap, nhapLaiMatKhau, hoVaTen, email);
+			User user = new User(hoVaTen, email, tenDangNhap, matKhau, "", phone);
 			userDao.insert(user);
 			response.sendRedirect("notify/registerSuccess.jsp");
 		}catch (Exception e) {
@@ -205,6 +212,26 @@ public class UserController extends HttpServlet {
 		try {			
 			String hoVaTen = request.getParameter("hoVaTen");
 			String email = request.getParameter("email");
+			String phone = request.getParameter("phone");
+			
+			// Xử lý file upload
+	        Part filePart = request.getPart("profileImage");
+	        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+
+	        System.out.println("OK");
+	        // Đường dẫn lưu file ảnh trên server
+	        String uploadDir = getServletContext().getRealPath("") + File.separator + "uploads";
+	        File uploadFolder = new File(uploadDir);
+	        if (!uploadFolder.exists()) {
+	            uploadFolder.mkdirs(); // Tạo thư mục nếu chưa tồn tại
+	        }
+
+	        // Lưu file ảnh vào thư mục
+	        String filePath = uploadDir + File.separator + fileName;
+	        filePart.write(filePath);
+
+	        // Lưu đường dẫn file ảnh (relative path) vào cơ sở dữ liệu
+	        String images = "uploads/" + fileName; //imgPath
 			
 			String url = "";
 			
@@ -212,7 +239,8 @@ public class UserController extends HttpServlet {
 			User userHienTai = (User) session.getAttribute("user");
 			if(userHienTai != null) {
 				String tenDangNhap = userHienTai.getTenDangNhap();
-				User user = new User(tenDangNhap, hoVaTen, email);
+				User user = new User(hoVaTen, email, tenDangNhap, images, phone);
+				
 				
 				UserDAO userDAO = new UserDAO();
 				userDAO.changeInfo(user);

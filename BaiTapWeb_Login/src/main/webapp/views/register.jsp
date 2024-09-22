@@ -29,6 +29,7 @@ String url = request.getScheme() + "://" + request.getServerName() + ":" + reque
 					 
 					<input class="text" type="text" name="hoVaTen" placeholder="Fullname" required="">
 					<input class="text email" type="email" name="email" placeholder="Email" required="">
+					<input style="margin-bottom: 28px" class="text" type="text" name="phone" placeholder="Phone" required="">
 					<input style="margin-bottom: 28px" class="text" type="text" name="tenDangNhap" placeholder="Username" required="">
 					<input class="text" type="password" name="matKhau" placeholder="Password" required="">
 					<input class="text w3lpass" type="password" name="nhapLaiMatKhau" placeholder="Confirm Password" required="">
