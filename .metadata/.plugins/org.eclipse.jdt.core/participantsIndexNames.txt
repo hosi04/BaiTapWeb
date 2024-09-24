@@ -1,10 +1,12 @@
 INDEX VERSION 1.134
-E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3428164912.index
-\BaiTapWeb_Login\src\main\java
+E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2357312939.index
+\vn.iotstar\src\main\java
 E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2675515875.index
 \HelloWorld\src\main\java
 E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3642059904.index
 \HelloWorld
+E:\study\nam-3\LapTrinhWeb\BaiTapWeb-main\BaiTapWeb-main\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3428164912.index
+\BaiTapWeb_Login\src\main\java
 E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1186087429.index
 \BaiTapWeb_Login\src\main\java
 E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1472817629.index
@@ -13,6 +15,10 @@ E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch
 \helloworld\src\main\java
 E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1164476865.index
 \vn.iotstar\src\main\java
+E:\study\nam-3\LapTrinhWeb\BaiTapWeb-main\BaiTapWeb-main\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2459731779.index
+\BaiTapWeb_Login\src\main\java
+E:\study\nam-3\LapTrinhWeb\BaiTapWeb-main\BaiTapWeb-main\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1956867806.index
+\BaiTapWeb_Login\src\main\java
 E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2292228679.index
 \LoginCookie\src\main\java
 E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\27534933.index
@@ -21,5 +27,5 @@ E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch
 \BaiTapWeb_Login\src\main\java
 E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2459731779.index
 \BaiTapWeb_Login\src\main\java
-E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2357312939.index
-\vn.iotstar\src\main\java
+E:\study\nam-3\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3428164912.index
+\BaiTapWeb_Login\src\main\java

@@ -21,9 +21,11 @@
     <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="databases.UserDAO"/>
-    <fullyQualifiedTypeName name="models.User"/>
     <fullyQualifiedTypeName name="javax.servlet.http.Part"/>
     <fullyQualifiedTypeName name="java.nio.file.Paths"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
+    <fullyQualifiedTypeName name="databases.JDBCUtil"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="models.User"/>
 </qualifiedTypeNameHistroy>
