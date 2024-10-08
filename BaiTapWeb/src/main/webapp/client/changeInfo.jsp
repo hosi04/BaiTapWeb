@@ -26,9 +26,7 @@ String url = request.getScheme() + "://" + request.getServerName() + ":" + reque
 	String phone= user.getPhone();
 	
 	String profileImage= user.getImages();
-	
 %>
-
     <div class="form-container">
         <h2>Change Information</h2>
        <form action="<%=url %>/Client" method="POST" enctype="multipart/form-data">
@@ -69,23 +67,5 @@ String url = request.getScheme() + "://" + request.getServerName() + ":" + reque
         </form>
 	</div>
 	
-	<!-- <script>
-		function previewImage(event) {
-			var image = document.getElementById('imagePreview');
-			var file = event.target.files[0];
-
-			if (file) {
-				var reader = new FileReader();
-				reader.onload = function(e) {
-					image.src = e.target.result;
-					image.style.display = 'block'; // Hiện ảnh xem trước
-				};
-				reader.readAsDataURL(file);
-			} else {
-				image.style.display = 'none'; // Ẩn ảnh nếu không có file nào được chọn
-			}
-		}
-	</script> -->
-
 </body>
 </html>

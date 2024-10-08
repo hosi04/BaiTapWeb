@@ -78,9 +78,6 @@ public class UserController extends HttpServlet {
 			
 			user.setTenDangNhap(tenDangNhap);
 			user.setMatKhau(matKhau);
-			
-			user = userDao.selectById(user);
-			
 			String url = "";
 			
 			user = userDao.checkLogin(user);
@@ -92,6 +89,9 @@ public class UserController extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("user", user);
 				url = "/views/index.jsp";
+				if(user.getRoleId().equals("1")) {
+					url = "/views/admin.jsp";
+				}
 				
 				if (rememberMe != null && rememberMe.equals("on")) {
 	                // Tạo cookie cho tên đăng nhập

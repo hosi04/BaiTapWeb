@@ -59,7 +59,7 @@ public class UserDAO implements DAOInterface<User> {
 			Connection con = JDBCUtil.getConnection();
 
 			// Bước 2: tạo ra đối tượng statement
-			String sql = "SELECT * FROM user WHERE tenDangNhap=? and matKhau=?";
+			String sql = "SELECT * FROM user WHERE tendangnhap=? and matkhau=?";
 			PreparedStatement st = con.prepareStatement(sql);
 			System.out.println(t.getTenDangNhap()+"/"+t.getMatKhau());
 			st.setString(1, t.getTenDangNhap());
@@ -78,11 +78,10 @@ public class UserDAO implements DAOInterface<User> {
 				String emmail = rs.getString("email");
 				String phone = rs.getString("phone");
 				String images = rs.getString("images");
-
-				ketQua = new User(hoVaTen, emmail, tenDangNhap, matKhau, images, phone);
+				String roleId = rs.getString("roleid");
 				
+				ketQua = new User(hoVaTen, emmail, tenDangNhap, matKhau, images, phone, roleId);
 			}
-
 			// Bước 5:
 			JDBCUtil.closeConnection(con);
 		} catch (SQLException e) {
@@ -160,9 +159,10 @@ public class UserDAO implements DAOInterface<User> {
 				String email = rs.getString("email");
 				String images = rs.getString("images");
 				String phone = rs.getString("phone");
+				String roleId = rs.getString("roleid");
 				
 				
-				ketQua = new User(hoVaTen, email, tenDangNhap, matKhau, images, phone);
+				ketQua = new User(hoVaTen, email, tenDangNhap, matKhau, images, phone, roleId);
 			}
 
 			// Bước 5:

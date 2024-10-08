@@ -10900,7 +10900,7 @@ p {
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.95rem;
-  color: #000;
+  color: white;
   letter-spacing: 0.0625em;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
@@ -10947,7 +10947,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../../assets/img/header-bg.webp");
+  background-image: url("../images/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11333,7 +11333,7 @@ body {
 
 /* Masthead styling */
 .masthead {
-    background-image: url('https://source.unsplash.com/1600x900/?nature,water');
+    background-image: url(../images/header-bg.jpg);
     background-size: cover;
     background-position: center;
     padding: 200px 0;
@@ -11359,7 +11359,7 @@ body {
 /* Services Section */
 .page-section {
     padding: 60px 0;
-    background-color: #f9f9f9;
+    background-color: whimastheadte;
 }
 
 .section-heading {
@@ -11392,4 +11392,38 @@ body {
 
 .footer a:hover {
     color: #007bff;
+}
+
+
+/* CSS product*/
+#products {
+    padding: 100px 0;
+}
+
+#products .section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#products .section-subheading {
+    font-size: 1.25rem;
+    color: #6c757d;
+    margin-bottom: 3rem;
+}
+
+#products .img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#products h4 {
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#products p {
+    color: #6c757d;
 }

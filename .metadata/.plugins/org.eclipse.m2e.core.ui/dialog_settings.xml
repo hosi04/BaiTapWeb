@@ -50,6 +50,8 @@
 			<item value="BaiTap1"/>
 		</list>
 		<list key="artifactId">
+			<item value="ltwst4"/>
+			<item value="BaiTapWeb"/>
 			<item value="LoginCookie"/>
 			<item value="HelloWorld"/>
 			<item value="vn.iotstar"/>

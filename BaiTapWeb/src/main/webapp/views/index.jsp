@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,12 +28,13 @@ String url = request.getScheme() + "://" + request.getServerName() + ":" + reque
 
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="<%=url %>/gui/css/style_index.css" rel="stylesheet" />
+<link href="<%=url %>/gui/css/style_category.css" rel="stylesheet" />
 
 </head>
 <body>
 
 	<!-- Begin Header -->
-		<jsp:include page="header.jsp"></jsp:include>
+		<jsp:include page="/common/header.jsp"></jsp:include>
 	<!-- End Header -->
 	
 	 <!-- Begin Main Content-->
@@ -82,7 +83,7 @@ String url = request.getScheme() + "://" + request.getServerName() + ":" + reque
 	<!-- End Main Content-->
 	
 	<!-- Begin Footer -->
-		<jsp:include page="footer.jsp"></jsp:include>
+		<jsp:include page="/common/footer.jsp"></jsp:include>
 	<!-- End Footer -->
 
 </body>
